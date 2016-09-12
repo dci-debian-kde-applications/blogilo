@@ -119,6 +119,8 @@ Vcs-Git: https://anonscm.debian.org/git/pkg-kde/applications/kdepim.git
 Package: blogilo
 Section: web
 Architecture: any
+Breaks:  kdepim-doc
+Replaces: kdepim-doc
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: graphical blogging client
  Blogilo is a Free/Open Source Blogging client, focused on simplicity and
