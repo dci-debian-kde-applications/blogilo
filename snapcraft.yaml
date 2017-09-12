@@ -1,0 +1,82 @@
+---
+name: blogilo
+version: 17.08.1
+summary: A KDE Blogging Client
+description: |-
+    Blogilo is a blogging client by KDE, which supports various blogging APIs.
+
+    Features:
+
+    - A full featured WYSIWYG editor + An HTML editor
+    - Previewing your post with your blog style
+    - Support for Blogger1.0, MetaWeblog, MovableType (Wordpress supports All of these!) and Google GData (used on Blogspot.com blogs) APIs
+    - Support for Creating/Modifying/Deleting posts.
+    - Support for creating drafts and scheduled posts
+    - Support for uploading media files to your blog (Just on supported APIs e.g. MetaWeblog and MovableType)
+    - Support for Fetching your recent blog entries.
+    - Support for adding Images to post from your system. It will upload them on Submitting post to blog (Just on supported APIs e.g. MetaWeblog and MovableType)
+    - Support for saving local entries before publishing.
+    - Saving your writing copy to prevent data loss, at configurable intervals.
+    - Internal auto spell checker. (KDE spell checker used so most of languages are supported)
+confinement: strict
+grade: stable
+apps:
+    blogilo:
+        command: kf5-launch blogilo
+        plugs:
+        - kde-frameworks-5-plug
+        - home
+        - x11
+        - opengl
+        - network
+        - network-bind
+        - unity7
+        - pulseaudio
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.blogilo
+        bus: session
+plugs:
+    kde-frameworks-5-plug:
+        content: kde-frameworks-5-all
+        interface: content
+        default-provider: kde-frameworks-5
+        target: kf5
+parts:
+    blogilo:
+        after:
+        - kde-frameworks-5-dev
+        - kde-frameworks-5-env
+        plugin: cmake
+        build-packages:
+        - libassuan-dev
+        - libboost-dev
+        - libboost-graph-dev
+        - libgpgme11-dev
+        - libkf5blog-dev
+        - libkf5dnssd-dev
+        - libkf5doctools-dev
+        - libkf5kdelibs4support-dev
+        - libkf5khtml-dev
+        - libkf5libkdepim-dev
+        - libkf5mimetreeparser-dev
+        - libkf5pimcommon-dev
+        - libkf5pimtextedit-dev
+        - libkf5templateparser-dev
+        - libkf5webengineviewer-dev
+        - libkpimgapi-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        - pkg-config
+        - xsltproc
+        - zlib1g-dev
+        - libpulse0
+        source: https://download.kde.org/stable/applications/17.08.1/src/blogilo-17.08.1.tar.xz
+        configflags:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
