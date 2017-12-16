@@ -37,14 +37,8 @@ Vcs-Git: https://anonscm.debian.org/git/pkg-kde/applications/kdepim.git
 Package: blogilo
 Section: web
 Architecture: any
-Breaks: kde-l10n-ast (<< 4:17.03.90-0~),
-        kde-l10n-eo (<< 4:17.03.90-0~),
-        kdepim-doc (<= 4:16.12.0),
-        ${kde-l10n:all},
-Replaces: kde-l10n-ast (<< 4:17.03.90-0~),
-          kde-l10n-eo (<< 4:17.03.90-0~),
-          kdepim-doc (<= 4:16.12.0),
-          ${kde-l10n:all},
+Breaks: kdepim-doc (<= 4:16.12.0), ${kde-l10n:all}
+Replaces: kdepim-doc (<= 4:16.12.0), ${kde-l10n:all}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: graphical blogging client
  Blogilo is a Free/Open Source Blogging client, focused on simplicity and
