@@ -1,4 +1,6 @@
-blogilo (4:17.08.3-1) UNRELEASED; urgency=medium
+blogilo (4:17.08.3-1) unstable; urgency=medium
+
+  * Team upload.
 
   [ Maximiliano Curia ]
   * New revision
@@ -17,7 +19,7 @@ blogilo (4:17.08.3-1) UNRELEASED; urgency=medium
   * Simplify watch file, and switch it to https.
   * Stop overriding dh_makeshlibs, since there are no shared library packages.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 16 Dec 2017 16:24:56 +0100
+ -- Sandro Knauß <hefee@debian.org>  Thu, 21 Dec 2017 17:50:52 +0100
 
 blogilo (4:17.08.0-1) experimental; urgency=medium
 
