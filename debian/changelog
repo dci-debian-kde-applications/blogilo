@@ -11,6 +11,7 @@ blogilo (4:17.08.3-1) UNRELEASED; urgency=medium
   * Remove not needed Build-Deps.
   * Fix Vcs-{Browser,Git} links to point to correct repo.
   * Bump debhelper build-dep and compat to 10.
+  * Set l10npkgs_firstversion_ok to 4:16.04.3-9~
 
   [ Pino Toscano ]
   * Simplify watch file, and switch it to https.
